@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .start-button, .quiz-submit-button, .try-again-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quiz-question {
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4a90e2;
+        }
+
+        .quiz-question h3 {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #results ul li {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        #about, #contact, #feedback {
+            background-color: #eaf4ff;
+            border-left: 5px solid #4a90e2;
+        }
+
+        #about h2, #contact h2, #feedback h2 {
+            color: #4a90e2;
+        }
+
+        #contact p, #feedback p {
+            color: #555;
+        }
+
+        .email-input {
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTa0YFHcwC6GKyuyLZtn46prXuvxYNVjqs0Q&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTa0YFHcwC6GKyuyLZtn46prXuvxYNVjqs0Q&s" alt="Quiz Image">
+        <h1>Welcome to the Quiz for kids!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#quiz">Take the Quiz</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Test Your Knowledge</h2>
+        <p>Are you ready to challenge yourself? Click the button below to start the quiz!</p>
+        <a href="#quiz" class="start-button">Start Quiz</a>
+    </section>
+
+    <section id="quiz">
+        <h2>Quiz Section</h2>
+        <form action="#results" method="GET">
+            <div class="quiz-question">
+                <h3>Question 1: What is the capital of France?</h3>
+                <input type="radio" name="q1" value="a"> A) Berlin<br>
+                <input type="radio" name="q1" value="b"> B) Madrid<br>
+                <input type="radio" name="q1" value="c"> C) Paris<br>
+                <input type="radio" name="q1" value="d"> D) Rome<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 2: Who wrote 'To Kill a Mockingbird'?</h3>
+                <input type="radio" name="q2" value="a"> A) Harper Lee<br>
+                <input type="radio" name="q2" value="b"> B) J.K. Rowling<br>
+                <input type="radio" name="q2" value="c"> C) Ernest Hemingway<br>
+                <input type="radio" name="q2" value="d"> D) Mark Twain<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 3: What is the chemical symbol for water?</h3>
+                <input type="radio" name="q3" value="a"> A) H2O<br>
+                <input type="radio" name="q3" value="b"> B) CO2<br>
+                <input type="radio" name="q3" value="c"> C) O2<br>
+                <input type="radio" name="q3" value="d"> D) H2<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 4: Who painted the Mona Lisa?</h3>
+                <input type="radio" name="q4" value="a"> A) Vincent van Gogh<br>
+                <input type="radio" name="q4" value="b"> B) Pablo Picasso<br>
+                <input type="radio" name="q4" value="c"> C) Leonardo da Vinci<br>
+                <input type="radio" name="q4" value="d"> D) Claude Monet<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 5: Which planet is known as the Red Planet?</h3>
+                <input type="radio" name="q5" value="a"> A) Venus<br>
+                <input type="radio" name="q5" value="b"> B) Mars<br>
+                <input type="radio" name="q5" value="c"> C) Jupiter<br>
+                <input type="radio" name="q5" value="d"> D) Saturn<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 6: What is the largest mammal?</h3>
+                <input type="radio" name="q6" value="a"> A) Elephant<br>
+                <input type="radio" name="q6" value="b"> B) Giraffe<br>
+                <input type="radio" name="q6" value="c"> C) Blue Whale<br>
+                <input type="radio" name="q6" value="d"> D) Shark<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 7: What is the smallest prime number?</h3>
+                <input type="radio" name="q7" value="a"> A) 0<br>
+                <input type="radio" name="q7" value="b"> B) 1<br>
+                <input type="radio" name="q7" value="c"> C) 2<br>
+                <input type="radio" name="q7" value="d"> D) 3<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 8: Who discovered gravity?</h3>
+                <input type="radio" name="q8" value="a"> A) Albert Einstein<br>
+                <input type="radio" name="q8" value="b"> B) Isaac Newton<br>
+                <input type="radio" name="q8" value="c"> C) Galileo Galilei<br>
+                <input type="radio" name="q8" value="d"> D) Nikola Tesla<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 9: Which is the fastest land animal?</h3>
+                <input type="radio" name="q9" value="a"> A) Lion<br>
+                <input type="radio" name="q9" value="b"> B) Tiger<br>
+                <input type="radio" name="q9" value="c"> C) Cheetah<br>
+                <input type="radio" name="q9" value="d"> D) Leopard<br>
+            </div>
+
+            <div class="quiz-question">
+                <h3>Question 10: What is the longest river in the world?</h3>
+                <input type="radio" name="q10" value="a"> A) Nile<br>
+                <input type="radio" name="q10" value="b"> B) Amazon<br>
+                <input type="radio" name="q10" value="c"> C) Yangtze<br>
+                <input type="radio" name="q10" value="d"> D) Mississippi<br>
+            </div>
+
+            <button type="submit" class="start-button">Submit Answers</button>
+        </form>
+    </section>
+
+    <section id="results">
+        <h2>Your Results</h2>
+        <p>Congratulations! Check your answers against the correct ones below:</p>
+        <ul>
+            <li>1. Correct Answer: C) Paris</li>
+            <li>2. Correct Answer: A) Harper Lee</li>
+            <li>3. Correct Answer: A) H2O</li>
+            <li>4. Correct Answer: C) Leonardo da Vinci</li>
+            <li>5. Correct Answer: B) Mars</li>
+            <li>6. Correct Answer: C) Blue Whale</li>
+            <li>7. Correct Answer: C) 2</li>
+            <li>8. Correct Answer: B) Isaac Newton</li>
+            <li>9. Correct Answer: C) Cheetah</li>
+            <li>10. Correct Answer: A) Nile</li>
+        </ul>
+        <a href="#quiz" class="try-again-button">Try Again</a>
+    </section>
+
+    <section id="about">
+        <h2>About This Quiz</h2>
+        <p>This quiz is designed to test your kid's general knowledge on various topics. Enjoy and learn!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, please reach out to us at 7200825008</p>
+    </section>
+
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <p>We'd love to hear your thoughts on this quiz! Let us know what you think and how we can improve.</p>
+        <input type="email" class="email-input" placeholder="Type your feedback" required>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Quiz Website</p>
+    </footer>
+
+</body>
+</html>
